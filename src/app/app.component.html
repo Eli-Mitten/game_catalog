@@ -1,20 +1,21 @@
-<h1>
-    {{ title }}
-  </h1>
+<div class="container">
+  <h1>
+      {{ title }}
+    </h1>
+    <div class="row">
+      <div class="col">
+        <button (click)="show=!show" class="btn btn-primary bn-sm float-right">togle show games</button>
+      </div>
+    </div>
   
-  <!-- <div class="row">
-    <div class="col">
-      <label>Name:</label>
-      <span>{{ game.name }}</span>
+    <div class="game-container" *ngIf="show">
+      <div *ngFor="let game of games">
+        <app-game-summary (gameChange)="onGameChange($event)" [game]="game"></app-game-summary>
+      </div>
     </div>
-    <div class="col">
-      <label>Release Date:</label>
-      <span>{{ game.getYearsFromRelease() }}</span>
+    <div >
+
+        <app-game-sellers [sellers]="gameSellers" [gameName]="gameName" ></app-game-sellers>
+
     </div>
-  </div> -->
-  <div class="container">
-    <div *ngFor="let game of games">
-      <app-game-summary [game]="game"></app-game-summary>
-    </div>
-  </div>
-  
+</div>

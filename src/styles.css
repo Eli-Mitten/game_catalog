@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-/* @import '../node_modules\bootstrap\dist\css\bootstrap.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 body {
-    padding: 0.5em;
+    padding: 0.5em; /* rem vs em */
 }
 
 label {
     padding: 0.5rem;
-} */
+}
