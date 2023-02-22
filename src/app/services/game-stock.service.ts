@@ -72,7 +72,6 @@ export class GameStockService {
   }
 
   getGameSellers(name: string): ISeller[] | null {
-    console.log("Service getGameSeller", name);
     return this.getGame(name)?.sellers || null;
   }
 

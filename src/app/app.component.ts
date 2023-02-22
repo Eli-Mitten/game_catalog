@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from './models/game.model';
 import { GameStockService } from './services/game-stock.service';
+import { ISeller } from './models/seller.model';
 
 @Component({
   selector: 'app-root',
@@ -13,17 +14,19 @@ export class AppComponent implements OnInit {
   // @ts-ignore
   games!: Game[];
   show = true;
+  gameName!: string
+  gameSellers!: ISeller[] | null
 
   constructor(private gameService: GameStockService) {
     this.gameService = gameService;
   }
 
   onGameChange(gameName: string) {
-    console.log(gameName);
+    this.gameName = gameName
+    this.gameSellers =  this.gameService.getGameSellers(gameName) || null
   }
 
   ngOnInit(): void {
     this.games = this.gameService.getGames();
-    
   }
 }

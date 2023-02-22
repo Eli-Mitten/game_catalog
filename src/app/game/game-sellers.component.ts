@@ -6,6 +6,6 @@ import { ISeller } from '../models/seller.model';
   templateUrl: './game-sellers.component.html',
 })
 export class GameSellersComponent {
-  @Input() sellers!: ISeller[]
+  @Input() sellers!: ISeller[] | null
   @Input() gameName!: string;
 }
